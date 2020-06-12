@@ -47,7 +47,7 @@ def twoSum(self, nums, target):
             if j is not None and i!=j:
                 return [i,j]
         
-# 方法四：一边生成字典，一边查找，进一步节省时间开销
+# 方法四：一边生成字典，一边查找，只需要查找num1之前的字典，不需要查找整个字典，进一步节省时间开销
 def twoSum(self, nums, target):
         dct = {}
         for i,num in enumerate(nums):
