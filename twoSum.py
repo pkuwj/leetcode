@@ -1,3 +1,4 @@
+#方法一
 def twoSum(self, nums, target):
         """
         :type nums: 输入一个列表
@@ -22,4 +23,24 @@ def twoSum(self, nums, target):
             return [i,j]
         else:
             # 即使没有结果，也要返回空的列表？
+            return []
+        
+#方法二：改进了在整个列表中查找num2的过程，降低了运行时间
+def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int] 返回一个列表类型
+        """
+        j=-1
+        lens = len(nums)
+        for i in range(lens):
+            #使用tmp缩短查找列表长度
+            tmp = nums[i+1:lens]
+            if (target-nums[i]) in tmp:
+                j=tmp.index(target-nums[i])+i+1
+                break
+        if j>0:
+            return [i,j]
+        else:
             return []
